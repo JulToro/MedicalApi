@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:latest  # Utiliza la imagen más reciente de PostgreSQL
+    restart: always  # Reinicia siempre que se detenga
+    environment:
+      POSTGRES_DB: medicalDb  # Nombre de la base de datos
+      POSTGRES_USER: postgres  # Usuario de PostgreSQL
+      POSTGRES_PASSWORD: admin  # Contraseña del usuario
+    volumes:
+      - postgres-data:/var/lib/postgresql/data  # Persiste los datos de PostgreSQL
+    ports:
+      - "5432:5432"  # Mapea el puerto 5432 del host al puerto 5432 del contenedor
+
+  api:
+    build:
+      context: .
+      dockerfile: Medical.MinimalAPI.WebAPI/Dockerfile  # Ruta al Dockerfile de la API principal
+    image: medical.minimalapi:latest
+    ports:
+      - "8080:80"  # Mapea el puerto 80 del host al puerto 80 del contenedor
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - db  # Espera a que el servicio de base de datos esté disponible antes de iniciar
+    volumes:
+      - ./Scripts:/docker-entrypoint-initdb.d  # Monta el script SQL de inicialización
+
+volumes:
+  postgres-data:  # Define el volumen para persistir los datos de PostgreSQL

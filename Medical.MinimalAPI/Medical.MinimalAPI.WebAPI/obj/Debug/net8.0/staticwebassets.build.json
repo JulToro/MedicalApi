@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vlJ4sJlcEQcvgUre+nmPR/8q763TqvBszkSZHyHlAD0=",
+  "Source": "Medical.MinimalAPI.WebAPI",
+  "BasePath": "_content/Medical.MinimalAPI.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

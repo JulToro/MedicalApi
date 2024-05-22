@@ -1,0 +1,98 @@
+# Compiled object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.def
+*.exp
+
+# Executables and shared objects (Windows and Unix)
+*.dll
+*.so
+*.so.*
+*.dylib
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.vs
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.pgc
+*.pgd
+
+# Generated Files
+*.gcno
+*.gcda
+*.gcov
+*.lst
+*.sbr
+*.mod
+*.o.d
+
+# DLL state
+*.ilk
+
+# Certificate Stores
+*.pfx
+*.p12
+
+# Private keys
+*.key
+
+# Mono auto generated files
+mono_crash.*
+
+# VS Code directories
+.vscode/
+
+# Rider
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# User-specific files
+*.rsuser
+*.rslog
+*.suo
+*.user
+*.userosscache
+*.userprefs
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# VS Code directories
+.vscode/
+.vscode/*
+
+# ASP.NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+Backup*/
+project.json
+project.lock.json
+project.fragment.lock.json
+artifacts/
