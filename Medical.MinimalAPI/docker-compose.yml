@@ -15,7 +15,7 @@ services:
       - "8088:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=User ID=postgres;Password=admin;Host=app_db;Port=5432;Database=medicalDb;Pooling=true;
+      - ConnectionStrings__DefaultConnection=User ID=postgres;Password=admin;Host=host.docker.internal;Port=5432;Database=medicalDb;Pooling=true;
       - ASPNETCORE_URLS=http://+:80
     depends_on:
       - "app_db"
