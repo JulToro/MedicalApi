@@ -1,7 +1,7 @@
 using Medical.MinimalAPI.WebAPI.Application.Controllers;
 using Medical.MinimalAPI.WebAPI.Domain.Interfaces;
 using Medical.MinimalAPI.WebAPI.Infrastructure;
-using Medical.MinimalAPI.WebAPI.Middleware;
+using Medical.MinimalAPI.WebAPI.Presentation.Middleware;
 using Npgsql;
 using System.Data;
 

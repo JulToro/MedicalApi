@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 
-namespace Medical.MinimalAPI.WebAPI.Middleware
+namespace Medical.MinimalAPI.WebAPI.Presentation.Middleware
 {
     public class ExceptionHandlingMiddleware
     {
@@ -44,7 +44,7 @@ namespace Medical.MinimalAPI.WebAPI.Middleware
             var response = new
             {
                 error = exception.Message,
-                stackTrace = exception.StackTrace 
+                stackTrace = exception.StackTrace
             };
 
             var jsonResponse = JsonSerializer.Serialize(response);
