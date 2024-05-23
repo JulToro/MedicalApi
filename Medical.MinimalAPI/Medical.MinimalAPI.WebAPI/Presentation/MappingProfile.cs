@@ -8,7 +8,13 @@ namespace Medical.MinimalAPI.WebAPI.Presentation
     {
         public MappingProfile()
         {
-            CreateMap<PatientDTO, PatientInformation>();
+            CreateMap<PatientInformation, PatientDTO>()
+            .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
+            .ForMember(dest => dest.VisitedCities, opt => opt.MapFrom(src => src.VisitedCities))
+            .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category))
+            // Añade más mapeos de propiedades si es necesario
+            .ReverseMap(); // Para mapeo bidireccional
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Medical.MinimalAPI.WebAPI.Application.DTO;
+using Medical.MinimalAPI.WebAPI.Domain.Models;
 using Medical.MinimalAPI.WebAPI.Domain.Queries.Patients.GetPatients;
 
 namespace Medical.MinimalAPI.WebAPI.Application.Controllers
@@ -16,8 +17,8 @@ namespace Medical.MinimalAPI.WebAPI.Application.Controllers
         {
             var query = new GetPatientsQuery();
             var result = await _mediator.Send(query);
-
-            await context.Response.WriteAsJsonAsync(mapper.Map<PatientDTO>(result));
+            var patientDTOs = mapper.Map<List<PatientDTO>>(result);
+            await context.Response.WriteAsJsonAsync(patientDTOs);
         }
     }
 }
