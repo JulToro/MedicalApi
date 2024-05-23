@@ -1,7 +1,13 @@
 # Compiled object files
 *.o
 *.obj
+# Carpeta de salida de pruebas unitarias
+bin/
+obj/
 
+# Archivos de resultados de pruebas unitarias
+*.trx
+*.coverage
 # Precompiled Headers
 *.gch
 *.pch

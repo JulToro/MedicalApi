@@ -12,8 +12,7 @@ namespace Medical.MinimalAPI.WebAPI.Presentation
             .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
             .ForMember(dest => dest.VisitedCities, opt => opt.MapFrom(src => src.VisitedCities))
             .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category))
-            // Añade más mapeos de propiedades si es necesario
-            .ReverseMap(); // Para mapeo bidireccional
+            .ReverseMap(); 
 
         }
     }

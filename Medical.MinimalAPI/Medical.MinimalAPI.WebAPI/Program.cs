@@ -7,7 +7,6 @@ using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -15,12 +14,11 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddScoped<IDbConnection>(_ => new NpgsqlConnection(connectionString));
 builder.Services.AddScoped<IMedicalRepository, MedicalContext>();
 
-// Injection mediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies((typeof(Program).Assembly)));
 
 builder.Services.AddCors();
 
-builder.Services.AddAutoMapper(typeof(Program)); // Configurar AutoMapper
+builder.Services.AddAutoMapper(typeof(Program)); 
 
 
 var app = builder.Build();
@@ -32,7 +30,6 @@ app.UseCors(policy =>
     policy.AllowAnyMethod();
 });
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();

@@ -20,16 +20,14 @@ namespace Medical.MinimalAPI.WebAPI.Domain.Queries.Patients.GetPatients
             var groupedPatients = patientEncounterResults
                 .GroupBy(pe => new { pe.PatientId, pe.FirstName, pe.LastName, pe.Age })
                 .Where(g => g.Select(pe => pe.PayerCity).Distinct().Count() >= 2)
-                .OrderBy(g => g.Count())
-                .Select(g => new PatientInformation{
-                    FullName = $"{g.Key.LastName}, {g.Key.FirstName}", 
-                    VisitedCities = string.Join(", ", g.Select(pe => pe.FacilityCity).Distinct()) ,
-                    Category= g.Key.Age < 16 ? "A" : "B"
-                }                    
-                )
-                .ToList();
-
-
+                .OrderBy(g => g.Count()) 
+                .Select(g => new PatientInformation
+                {
+                    FullName = $"{g.Key.LastName}, {g.Key.FirstName}",
+                    VisitedCities = string.Join(", ", g.Select(pe => pe.FacilityCity).Distinct()), 
+                    Category = g.Key.Age < 16 ? "A" : "B" 
+                })
+                .ToList(); 
 
             return groupedPatients;
         }
