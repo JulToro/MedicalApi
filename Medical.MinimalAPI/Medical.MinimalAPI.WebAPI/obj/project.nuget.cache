@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lgOSev5PMJjdffc9dg4y/bTdL5+DLkZwtaQvJqGiP3GIpvnkhJ/5jXuf7//46fSjLvoX/bHqDQTYwliST7daNw==",
+  "dgSpecHash": "8OVNW8Uw8smmPFPWa93jo9Tj7Nq7LF2g2bGImTrimxnPNS4Aft8XmC+QgwyyMe79zmR1OzghFJG3gxAiTQv1Nw==",
   "success": true,
-  "projectFilePath": "C:\\temp\\MedicalAPI\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj",
+  "projectFilePath": "C:\\Practica\\MedicalApi\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Julian_Toro\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Julian_Toro\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\Julian_Toro\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\Julian_Toro\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

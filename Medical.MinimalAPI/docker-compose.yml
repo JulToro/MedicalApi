@@ -1,29 +1,40 @@
-services:
-  db:
-    image: postgres:latest  # Utiliza la imagen más reciente de PostgreSQL
-    restart: always  # Reinicia siempre que se detenga
-    environment:
-      POSTGRES_DB: medicalDb  # Nombre de la base de datos
-      POSTGRES_USER: postgres  # Usuario de PostgreSQL
-      POSTGRES_PASSWORD: admin  # Contraseña del usuario
-    volumes:
-      - postgres-data:/var/lib/postgresql/data  # Persiste los datos de PostgreSQL
-    ports:
-      - "5432:5432"  # Mapea el puerto 5432 del host al puerto 5432 del contenedor
+version: '3.8'
 
-  api:
+networks:
+  dev:
+    driver: bridge
+    
+services:
+  demo-app:
+    image: docker.io/library/medicalminimalapiwebapi  
     build:
-      context: .
-      dockerfile: Medical.MinimalAPI.WebAPI/Dockerfile  # Ruta al Dockerfile de la API principal
-    image: medical.minimalapi:latest
+      context: ./Medical.MinimalAPI.WebAPI
+      dockerfile: Dockerfile    
+    container_name: demoapp-services
     ports:
-      - "8080:80"  # Mapea el puerto 80 del host al puerto 80 del contenedor
+      - "8088:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=User ID=postgres;Password=admin;Host=app_db;Port=5432;Database=medicalDb;Pooling=true;
+      - ASPNETCORE_URLS=http://+:80
     depends_on:
-      - db  # Espera a que el servicio de base de datos esté disponible antes de iniciar
+      - "app_db"
+    networks:
+      - dev
+
+  app_db:
+    image: postgres:latest
+    container_name: app_db
+    restart: always
+    environment:
+      POSTGRES_DB: medicalDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
     volumes:
-      - ./Scripts:/docker-entrypoint-initdb.d  # Monta el script SQL de inicialización
+      - postgres-data:/var/lib/postgresql/data
+      - ./Medical.MinimalAPI.WebAPI/Scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
 
 volumes:
-  postgres-data:  # Define el volumen para persistir los datos de PostgreSQL
+  postgres-data:  

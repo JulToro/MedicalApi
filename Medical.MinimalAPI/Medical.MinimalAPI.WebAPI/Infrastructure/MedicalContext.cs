@@ -1,20 +1,20 @@
 ﻿using Dapper;
-using Medical.MinimalAPI.WebAPI.DTO;
-using Medical.MinimalAPI.WebAPI.Models;
+using Medical.MinimalAPI.WebAPI.Domain.Interfaces;
+using Medical.MinimalAPI.WebAPI.Domain.Models;
 using Npgsql;
 using System.Data;
 
-namespace Medical.MinimalAPI.WebAPI.Infrastructure.Queries
+namespace Medical.MinimalAPI.WebAPI.Infrastructure
 {
-    public class MedicalQueryContext: IMedicalQueryContext, IDisposable
+    public class MedicalContext : IMedicalRepository, IDisposable
     {
         private readonly IDbConnection _dbConnection;
 
-        public MedicalQueryContext(IDbConnection dbConnection)
+        public MedicalContext(IDbConnection dbConnection)
         {
             _dbConnection = dbConnection;
-        }        
-                
+        }
+
         public async Task<IEnumerable<PatientEncounterResult>> GetPatientEncounterAsync()
         {
             string sql = @"

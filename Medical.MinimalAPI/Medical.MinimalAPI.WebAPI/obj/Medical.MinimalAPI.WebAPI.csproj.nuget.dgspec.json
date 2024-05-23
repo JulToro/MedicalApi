@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\temp\\MedicalAPI\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj": {}
+    "C:\\Practica\\MedicalApi\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\temp\\MedicalAPI\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj": {
+    "C:\\Practica\\MedicalApi\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\MedicalAPI\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj",
+        "projectUniqueName": "C:\\Practica\\MedicalApi\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj",
         "projectName": "Medical.MinimalAPI.WebAPI",
-        "projectPath": "C:\\temp\\MedicalAPI\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj",
+        "projectPath": "C:\\Practica\\MedicalApi\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\Medical.MinimalAPI.WebAPI.csproj",
         "packagesPath": "C:\\Users\\Julian_Toro\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\MedicalAPI\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\obj\\",
+        "outputPath": "C:\\Practica\\MedicalApi\\Medical.MinimalAPI\\Medical.MinimalAPI.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Julian_Toro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.35, )"
